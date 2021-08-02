@@ -4,15 +4,15 @@ class GameEntry:
         self.score = score
         self.time = time
         
-    def get_name(self, name):
+    def set_name(self, name):
         self.name = name
     def get_name(self):
         return self.name
-    def get_score(self, score):
+    def set_score(self, score):
         self.score = score
     def get_score(self):
         return self.score
-    def get_time(self, time):
+    def set_time(self, time):
         self.time = time
     def get_time(self):
         return self.time
@@ -30,7 +30,7 @@ class ScoreBoard:
 
         if good:
             if self.n < self.capacity:
-                self.n += 1
+                self.n = self.n + 1
 
             j = self.n - 1
 
@@ -41,8 +41,6 @@ class ScoreBoard:
                 print("Entri ditambahkan")
 
 Nurma_score = GameEntry("Nurma", 89, 4)
-Lily_score = GameEntry("Lily", 90, 4)
-Rina_score = GameEntry("Rina", 89, 4)
 
 score_board = ScoreBoard(2)
 score_board.addItem(Nurma_score)
