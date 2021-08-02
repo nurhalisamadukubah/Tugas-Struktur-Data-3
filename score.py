@@ -10,22 +10,22 @@ class GameEntry:
     
     def set_Name(self, name):
         self.name = name
-        
+
     def get_Name(self):
         return self.name
-    
+
     def set_Score(self, score):
         self.score = score
-        
+    
     def get_Score(self):
         return self.score
-    
+
     def set_Time(self, time):
         self.time = time
-        
+
     def get_Time(self):
         return self.time
-    
+
     def get_Total():
         return GameEntry.total_player
 
@@ -59,23 +59,18 @@ class ScoreBoard:
             self.board[j] = game_entry
             print(f"Entri {name} ditambahkan!")
 
-    def listEntries(self):
+    def listEntri(self):
         for i in range (0, self.n):
-            print(i+1,":", getattr(self.board[i], 'name'), getattr(self.board[i], 'score'), getattr(self.board[i], 'time'))
+            print("Rank", i+1,"|", getattr(self.board[i], 'name'), getattr(self.board[i], 'score'), getattr(self.board[i], 'time'))
 
 Nurma_score = GameEntry("Nurma", 99, 4)
 Nunu_score = GameEntry("Nunu", 90, 6)
 Nununu_score = GameEntry("Nununu", 91, 4)
-Nunununu_score = GameEntry("Nunununu", 93, 5)
-Nururu_score = GameEntry("Nururu", 92, 3)
-Nurufu_score = GameEntry("Nurufu", 94, 5)
 
 score_board = ScoreBoard(10)
 score_board.addItem(Nurma_score)
 score_board.addItem(Nunu_score)
 score_board.addItem(Nununu_score)
-score_board.addItem(Nururu_score)
-score_board.addItem(Nurufu_score)
 
 active = True
 
@@ -84,7 +79,7 @@ while active:
     start = input("Menu: \n 1 = Tambah Entri Baru \n 2 = Tampilkan List ScoreBoard \n 3 = Keluar \n")
     print("")
     if start == '2':
-        score_board.listEntries()
+        score_board.listEntri()
     elif start == '1':
         name = input("Masukkan Nama Pemain ")
         skor = int(input("Masukkan Skor "))
