@@ -25,6 +25,7 @@ class ScoreBoard:
 
     def addItem(self, game_entry):
         score = game_entry.get_score()
+        return self
 
         good = len(self.board) > self.n or score > self.board[self.capacity -1].get_score()
 
@@ -41,8 +42,14 @@ class ScoreBoard:
                 print("Entri ditambahkan")
 
 Nurma_score = GameEntry("Nurma", 89, 4)
+Lily_score = GameEntry("Lily", 90, 4)
+Rina_score = GameEntry("Rina", 89, 4)
 
 score_board = ScoreBoard(2)
 score_board.addItem(Nurma_score)
+score_board.addItem(Lily_score)
+score_board.addItem(Rina_score)
 
 print(Nurma_score.get_score())
+print(Lily_score.get_score())
+print(Rina_score.get_score())
